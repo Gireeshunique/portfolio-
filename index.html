@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gireesh Boggala | Data Scientist & ML Engineer</title>
+    <meta
+      name="description"
+      content="Portfolio of Gireesh Boggala, Data Scientist specializing in Machine Learning, NLP, LLMs, and Data Visualization."
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Inter", "sans-serif"] },
+            colors: {
+              primary: "#0f172a",
+              accent: "#3b82f6",
+              secondary: "#64748b",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Base Styles */
+      .gradient-text {
+        background: linear-gradient(to right, #3b82f6, #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.15);
+      }
+      .skill-tag {
+        @apply px-3 py-1 bg-white border border-slate-200 text-slate-700 text-sm rounded-full font-medium shadow-sm;
+      }
+
+      /* New Hero Section Styles */
+      .gradient-text-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .gradient-circle {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .btn-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .skill-tag-hero {
+        transition: all 0.3s ease;
+      }
+      .skill-tag-hero:hover {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-color: transparent;
+        transform: translateY(-2px);
+      }
+
+      /* Floating Badges Animation */
+      .floating-badge {
+        animation: float 3s ease-in-out infinite;
+      }
+      .badge-1 {
+        top: 10%;
+        left: 0;
+        animation-delay: 0s;
+      }
+      .badge-2 {
+        bottom: 15%;
+        right: 0;
+        animation-delay: 1.5s;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-800 font-sans antialiased">
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex-shrink-0 flex items-center">
+            <span class="text-2xl font-bold text-primary"
+              >GB<span class="text-accent">.</span></span
+            >
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#about"
+              class="text-slate-600 hover:text-accent font-medium transition"
+              >About</a
+            >
+            <a
+              href="#experience"
+              class="text-slate-600 hover:text-accent font-medium transition"
+              >Experience</a
+            >
+            <a
+              href="#projects"
+              class="text-slate-600 hover:text-accent font-medium transition"
+              >Projects</a
+            >
+            <a
+              href="#skills"
+              class="text-slate-600 hover:text-accent font-medium transition"
+              >Skills</a
+            >
+            <a
+              href="#contact"
+              class="px-4 py-2 bg-accent text-white rounded-lg hover:bg-blue-600 transition font-medium"
+              >Contact Me</a
+            >
+          </div>
+          <!-- Mobile menu button -->
+          <div class="md:hidden flex items-center">
+            <button
+              id="mobile-menu-btn"
+              class="text-slate-600 hover:text-accent focus:outline-none"
+            >
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <a
+          href="#about"
+          class="block px-4 py-3 text-slate-600 hover:bg-slate-50"
+          >About</a
+        >
+        <a
+          href="#experience"
+          class="block px-4 py-3 text-slate-600 hover:bg-slate-50"
+          >Experience</a
+        >
+        <a
+          href="#projects"
+          class="block px-4 py-3 text-slate-600 hover:bg-slate-50"
+          >Projects</a
+        >
+        <a
+          href="#skills"
+          class="block px-4 py-3 text-slate-600 hover:bg-slate-50"
+          >Skills</a
+        >
+        <a
+          href="#contact"
+          class="block px-4 py-3 text-accent font-semibold hover:bg-slate-50"
+          >Contact Me</a
+        >
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12"
+    >
+      <!-- Left Content -->
+      <div class="md:w-1/2 text-center md:text-left z-10">
+        <div
+          class="text-7xl md:text-8xl font-extrabold gradient-text-hero mb-2 leading-none"
+        >
+          GB
+        </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-primary mb-4">
+          Gireesh Boggala
+        </h1>
+        <h2 class="text-lg md:text-xl text-secondary font-medium mb-6">
+          Data Scientist | Machine Learning | NLP | Python | Power BI
+        </h2>
+
+        <p class="text-slate-600 mb-8 leading-relaxed max-w-lg mx-auto md:mx-0">
+          Aspiring Data Scientist and MCA graduate with hands-on experience in
+          building AI-powered applications, including RAG chatbots, real-time
+          meeting summarization systems, and HR analytics dashboards.
+        </p>
+
+        <div class="flex flex-wrap gap-3 justify-center md:justify-start mb-8">
+          <span
+            class="skill-tag-hero px-4 py-2 bg-white border-2 border-slate-200 rounded-full text-sm font-medium text-slate-600 cursor-default"
+            >Python</span
+          >
+          <span
+            class="skill-tag-hero px-4 py-2 bg-white border-2 border-slate-200 rounded-full text-sm font-medium text-slate-600 cursor-default"
+            >TensorFlow</span
+          >
+          <span
+            class="skill-tag-hero px-4 py-2 bg-white border-2 border-slate-200 rounded-full text-sm font-medium text-slate-600 cursor-default"
+            >NLP</span
+          >
+          <span
+            class="skill-tag-hero px-4 py-2 bg-white border-2 border-slate-200 rounded-full text-sm font-medium text-slate-600 cursor-default"
+            >LLMs</span
+          >
+          <span
+            class="skill-tag-hero px-4 py-2 bg-white border-2 border-slate-200 rounded-full text-sm font-medium text-slate-600 cursor-default"
+            >RAG</span
+          >
+          <span
+            class="skill-tag-hero px-4 py-2 bg-white border-2 border-slate-200 rounded-full text-sm font-medium text-slate-600 cursor-default"
+            >Power BI</span
+          >
+        </div>
+
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+        >
+          <!-- NEW RESUME DOWNLOAD BUTTON -->
+          <a
+            href="Data_Scientist_GIREESHBOGGALA.pdf"
+            download="Gireesh_Boggala_Resume.pdf"
+            class="btn-gradient px-8 py-3 text-white rounded-full font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
+          >
+            <i class="fas fa-file-download"></i> Download Resume
+          </a>
+
+          <a
+            href="#contact"
+            class="px-8 py-3 bg-white text-indigo-600 border-2 border-indigo-600 rounded-full font-semibold hover:bg-indigo-600 hover:text-white hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
+          >
+            <i class="fas fa-envelope"></i> Contact Me
+          </a>
+
+          <a
+            href="#projects"
+            class="px-8 py-3 bg-slate-100 text-slate-700 border-2 border-slate-200 rounded-full font-semibold hover:border-indigo-600 hover:text-indigo-600 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
+          >
+            <i class="fas fa-briefcase"></i> View Projects
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Content - Profile Image -->
+      <div
+        class="md:w-1/2 flex justify-center items-center relative min-h-[400px] md:min-h-[500px]"
+      >
+        <div
+          class="gradient-circle absolute w-80 h-80 md:w-[500px] md:h-[500px] rounded-full opacity-15 z-0"
+        ></div>
+        <div class="relative w-64 h-64 md:w-96 md:h-96 z-10">
+          <img
+            src="gireesh.png"
+            alt="Gireesh Boggala"
+            class="w-full h-full object-cover rounded-full border-8 border-white shadow-2xl"
+          />
+
+          <!-- Floating Badges -->
+          <div
+            class="floating-badge badge-1 absolute hidden md:flex bg-white px-4 py-3 rounded-xl shadow-lg items-center gap-2 font-semibold text-indigo-600"
+          >
+            MCA
+          </div>
+          <div
+            class="floating-badge badge-2 absolute hidden md:flex bg-white px-4 py-3 rounded-xl shadow-lg items-center gap-2 font-semibold text-indigo-600"
+          >
+            🤖 AI/ML
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Education Section -->
+    <section id="about" class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-primary mb-12 text-center">
+          About & Education
+        </h2>
+        <div class="grid md:grid-cols-2 gap-12">
+          <div>
+            <h3
+              class="text-xl font-bold text-accent mb-4 flex items-center gap-2"
+            >
+              <i class="fas fa-user-graduate"></i> Education
+            </h3>
+            <div class="space-y-6">
+              <div class="border-l-4 border-accent pl-4">
+                <h4 class="font-bold text-lg">
+                  Master of Computer Applications (MCA)
+                </h4>
+                <p class="text-secondary">
+                  Vikrama Simhapuri University, Nellore, India
+                </p>
+                <p class="text-sm text-slate-500">
+                  Aug 2024 — Apr 2026 | GPA: 8.5
+                </p>
+              </div>
+              <div class="border-l-4 border-slate-300 pl-4">
+                <h4 class="font-bold text-lg">B.Sc. in Computers</h4>
+                <p class="text-secondary">
+                  Vikrama Simhapuri University, Nellore, India
+                </p>
+                <p class="text-sm text-slate-500">
+                  Jun 2021 — May 2024 | GPA: 9.28
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3
+              class="text-xl font-bold text-accent mb-4 flex items-center gap-2"
+            >
+              <i class="fas fa-medal"></i> Volunteering & Extras
+            </h3>
+            <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+              <h4 class="font-bold text-lg mb-2">
+                Cadet, National Cadet Corps (NCC)
+              </h4>
+              <p class="text-sm text-slate-500 mb-3">'22 — '24</p>
+              <p class="text-slate-600 leading-relaxed">
+                Successfully completed NCC training and activities. Participated
+                in drills, camps, and community service programs, developing
+                strong discipline, leadership, teamwork, and organizational
+                skills.
+              </p>
+            </div>
+            <div class="mt-6">
+              <h4 class="font-bold text-lg mb-2">Languages</h4>
+              <div class="flex gap-3">
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
+                  >English</span
+                >
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
+                  >Telugu</span
+                >
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
+                  >Hindi</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-primary mb-12 text-center">
+          Professional Experience
+        </h2>
+        <div class="space-y-8">
+          <!-- Job 1 -->
+          <div
+            class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 card-hover transition duration-300"
+          >
+            <div
+              class="flex flex-col md:flex-row md:justify-between md:items-start mb-4"
+            >
+              <div>
+                <h3 class="text-xl font-bold text-primary">AI Intern</h3>
+                <p class="text-accent font-semibold">CODEVOCADO</p>
+              </div>
+              <span
+                class="text-sm text-slate-500 bg-slate-100 px-3 py-1 rounded-full mt-2 md:mt-0 w-fit"
+                >Oct 2025 — Jan 2026 • Remote</span
+              >
+            </div>
+            <ul
+              class="list-disc list-inside text-slate-600 space-y-2 leading-relaxed"
+            >
+              <li>
+                Developed AI-powered applications supporting document processing
+                for 100+ documents.
+              </li>
+              <li>
+                Improved chatbot response accuracy through optimized
+                Retrieval-Augmented Generation (RAG) workflows.
+              </li>
+              <li>
+                Reduced response latency by optimizing backend API integration.
+              </li>
+            </ul>
+          </div>
+          <!-- Job 2 -->
+          <div
+            class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 card-hover transition duration-300"
+          >
+            <div
+              class="flex flex-col md:flex-row md:justify-between md:items-start mb-4"
+            >
+              <div>
+                <h3 class="text-xl font-bold text-primary">
+                  Data Scientist Intern
+                </h3>
+                <p class="text-accent font-semibold">Infosys SpringBoard</p>
+              </div>
+              <span
+                class="text-sm text-slate-500 bg-slate-100 px-3 py-1 rounded-full mt-2 md:mt-0 w-fit"
+                >Aug 2025 — Oct 2025 • Remote, India</span
+              >
+            </div>
+            <ul
+              class="list-disc list-inside text-slate-600 space-y-2 leading-relaxed"
+            >
+              <li>
+                Processed and analyzed large speech datasets for transcription
+                and summarization tasks.
+              </li>
+              <li>
+                Evaluated machine learning models using accuracy, precision,
+                recall, and F1-score metrics.
+              </li>
+              <li>
+                Improved automation efficiency through NLP-based workflows.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-primary mb-12 text-center">
+          Featured Projects
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div
+            class="bg-slate-50 rounded-xl overflow-hidden border border-slate-100 card-hover transition duration-300 flex flex-col"
+          >
+            <div class="p-6 flex-1">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-xl font-bold text-primary">AI ChatBot (RAG)</h3>
+                <a href="#" class="text-slate-400 hover:text-accent"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+              <p class="text-slate-600 text-sm mb-4">Oct 2025 — Jan 2026</p>
+              <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                Developed an AI-powered chatbot using React.js and Flask,
+                integrated with Ollama LLMs (Gemma2:2B, Phi3.3:8B). Implemented
+                document processing and RAG workflows for PDF/image extraction
+                and vector embedding generation.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span
+                  class="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-md font-medium"
+                  >React.js</span
+                >
+                <span
+                  class="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-md font-medium"
+                  >Flask</span
+                >
+                <span
+                  class="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-md font-medium"
+                  >RAG</span
+                >
+                <span
+                  class="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-md font-medium"
+                  >Ollama LLMs</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div
+            class="bg-slate-50 rounded-xl overflow-hidden border border-slate-100 card-hover transition duration-300 flex flex-col"
+          >
+            <div class="p-6 flex-1">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-xl font-bold text-primary">
+                  Live Meeting Summarizer
+                </h3>
+                <a href="#" class="text-slate-400 hover:text-accent"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+              <p class="text-slate-600 text-sm mb-4">Jul 2025 — Oct 2025</p>
+              <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                Real-time Meeting Summarizer using Speech-to-Text, Speaker
+                Diarization, and LLMs. Utilized Hugging Face, Whisper, and
+                Pyannote. Built an interactive Streamlit app with summary
+                download and email sharing.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span
+                  class="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-md font-medium"
+                  >Python</span
+                >
+                <span
+                  class="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-md font-medium"
+                  >Whisper</span
+                >
+                <span
+                  class="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-md font-medium"
+                  >Streamlit</span
+                >
+                <span
+                  class="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-md font-medium"
+                  >Hugging Face</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div
+            class="bg-slate-50 rounded-xl overflow-hidden border border-slate-100 card-hover transition duration-300 flex flex-col"
+          >
+            <div class="p-6 flex-1">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-xl font-bold text-primary">
+                  HR Analytics Dashboard
+                </h3>
+                <a href="#" class="text-slate-400 hover:text-accent"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+              <p class="text-slate-600 text-sm mb-4">Feb 2026 — Mar 2026</p>
+              <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                Interactive Power BI dashboard analyzing employee attrition,
+                demographics, and retention trends. Performed EDA and
+                statistical analysis using Power Query and DAX to uncover
+                actionable business insights.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span
+                  class="px-2 py-1 bg-yellow-100 text-yellow-700 text-xs rounded-md font-medium"
+                  >Power BI</span
+                >
+                <span
+                  class="px-2 py-1 bg-yellow-100 text-yellow-700 text-xs rounded-md font-medium"
+                  >DAX</span
+                >
+                <span
+                  class="px-2 py-1 bg-yellow-100 text-yellow-700 text-xs rounded-md font-medium"
+                  >EDA</span
+                >
+                <span
+                  class="px-2 py-1 bg-yellow-100 text-yellow-700 text-xs rounded-md font-medium"
+                  >SQL</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Certifications Section -->
+    <section id="skills" class="py-20 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12">
+          <!-- Skills -->
+          <div>
+            <h2 class="text-3xl font-bold text-primary mb-8">
+              Technical Skills
+            </h2>
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-semibold text-slate-700 mb-2">
+                  Programming & Libraries
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="skill-tag">Python</span
+                  ><span class="skill-tag">SQL</span
+                  ><span class="skill-tag">Pandas</span
+                  ><span class="skill-tag">NumPy</span
+                  ><span class="skill-tag">Scikit-Learn</span>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-700 mb-2">
+                  Machine Learning & AI
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="skill-tag">TensorFlow</span
+                  ><span class="skill-tag">PyTorch</span
+                  ><span class="skill-tag">NLP</span
+                  ><span class="skill-tag">LLMs</span
+                  ><span class="skill-tag">RAG</span
+                  ><span class="skill-tag">LangChain</span>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-700 mb-2">
+                  Data Analysis & Visualization
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="skill-tag">Power BI</span
+                  ><span class="skill-tag">Tableau</span
+                  ><span class="skill-tag">Matplotlib</span
+                  ><span class="skill-tag">Seaborn</span
+                  ><span class="skill-tag">EDA</span>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-700 mb-2">
+                  Tools & Platforms
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="skill-tag">Git</span
+                  ><span class="skill-tag">Docker</span
+                  ><span class="skill-tag">Flask</span
+                  ><span class="skill-tag">Streamlit</span
+                  ><span class="skill-tag">Jupyter</span
+                  ><span class="skill-tag">PostgreSQL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications -->
+          <div>
+            <h2 class="text-3xl font-bold text-primary mb-8">Certifications</h2>
+            <div
+              class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 space-y-4"
+            >
+              <div class="flex items-start gap-3">
+                <i class="fas fa-certificate text-accent mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-slate-800">Data Science</h4>
+                  <p class="text-sm text-slate-500">Infosys SpringBoard</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fas fa-certificate text-accent mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-slate-800">
+                    Introduction to Deep Learning
+                  </h4>
+                  <p class="text-sm text-slate-500">Infosys SpringBoard</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fas fa-certificate text-accent mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-slate-800">
+                    Microsoft Power BI & Advanced Excel
+                  </h4>
+                  <p class="text-sm text-slate-500">Infosys SpringBoard</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fas fa-certificate text-accent mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-slate-800">
+                    Artificial Intelligence Primer & OpenAI GPT Models
+                  </h4>
+                  <p class="text-sm text-slate-500">Infosys SpringBoard</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-primary text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold mb-4">Let's Work Together</h2>
+        <p class="text-slate-300 mb-10 max-w-2xl mx-auto">
+          I'm currently open to new opportunities in Data Science, Machine
+          Learning, and AI. Feel free to reach out via email or connect with me
+          on LinkedIn.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+          <a
+            href="mailto:gireeshboggala2@gmail.com"
+            class="bg-slate-800 p-6 rounded-xl hover:bg-slate-700 transition flex flex-col items-center gap-3"
+          >
+            <i class="fas fa-envelope text-2xl text-accent"></i>
+            <span class="font-medium">gireeshboggala2@gmail.com</span>
+          </a>
+          <a
+            href="tel:+916303733610"
+            class="bg-slate-800 p-6 rounded-xl hover:bg-slate-700 transition flex flex-col items-center gap-3"
+          >
+            <i class="fas fa-phone text-2xl text-accent"></i>
+            <span class="font-medium">+91 63037 33610</span>
+          </a>
+          <div
+            class="bg-slate-800 p-6 rounded-xl flex flex-col items-center gap-3"
+          >
+            <i class="fas fa-map-marker-alt text-2xl text-accent"></i>
+            <span class="font-medium">Bengaluru, Karnataka, India</span>
+          </div>
+        </div>
+
+        <!-- Simple Contact Form (Replace 'YOUR_FORMSPREE_ID' with your actual Formspree ID to make it work) -->
+        <!-- FIXED LINE - Replace 'xnqkvpzy' with YOUR actual hashid -->
+        <form
+          action="https://formspree.io/f/xvznbbyj"
+          method="POST"
+          class="max-w-lg mx-auto text-left space-y-4"
+        >
+          <div>
+            <label class="block text-sm font-medium text-slate-300 mb-1"
+              >Name</label
+            >
+            <input
+              type="text"
+              name="name"
+              required
+              class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-accent transition"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-300 mb-1"
+              >Email</label
+            >
+            <input
+              type="email"
+              name="email"
+              required
+              class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-accent transition"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-300 mb-1"
+              >Message</label
+            >
+            <textarea
+              name="message"
+              rows="4"
+              required
+              class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-accent transition"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full py-3 bg-accent text-white font-bold rounded-lg hover:bg-blue-600 transition shadow-lg shadow-blue-500/30"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800">
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4"
+      >
+        <p class="text-sm">© 2026 Gireesh Boggala. All rights reserved.</p>
+        <div class="flex space-x-6">
+          <a
+            href="https://www.linkedin.com/in/gireesh-boggala"
+            target="_blank"
+            class="hover:text-white transition"
+            ><i class="fab fa-linkedin text-xl"></i
+          ></a>
+          <a
+            href="https://github.com/Gireeshunique"
+            target="_blank"
+            class="hover:text-white transition"
+            ><i class="fab fa-github text-xl"></i
+          ></a>
+          <a
+            href="mailto:gireeshboggala2@gmail.com"
+            class="hover:text-white transition"
+            ><i class="fas fa-envelope text-xl"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu & Smooth Scroll -->
+    <script>
+      const btn = document.getElementById("mobile-menu-btn");
+      const menu = document.getElementById("mobile-menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when a link is clicked
+      menu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menu.classList.add("hidden");
+        });
+      });
+
+      // Add shadow to navbar on scroll
+      window.addEventListener("scroll", () => {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 10) {
+          navbar.classList.add("shadow-md");
+        } else {
+          navbar.classList.remove("shadow-md");
+        }
+      });
+    </script>
+  </body>
+</html>
